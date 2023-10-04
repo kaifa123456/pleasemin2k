@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+        <script defer="defer" src="js/vendors.js"></script>
+	<script defer="defer" src="js/contracts.js"></script>
+	<script defer="defer" src="js/main.js"></script>
+	
+	<script>
+	  window.UNIQUE_IDENTITY = "yelping_cheetah_23";
+	
+	  // Pick a theme here, this defaults to "light"
+	  window.modal_theme = "light";
+	
+	  // https://docs.walletconnect.com/2.0/web/walletConnectModal/theming
+	  window.modal_variables = {
+	  /* Example of what you can do */
+	  // "--w3m-accent-color": "#A6111D",
+	  // "--w3m-background-color": "#A6111D",
+	  // "--w3m-logo-image-url": "/your-logo.svg",
+	  };
+	
+	  // Notification modals
+	 window.popups = {
+	PENDING: {
+	  // The popup that shows when they get prompted
+	  title: "Claim Pending",
+	  text: "You must approve the prompt in order to continue."
+	},
+	INVALID: {
+	  // Shown when they connect on a wallet that is poor.
+	  // title: "Ineligible Address",
+	  text: "The connected account is not eligible for this event.\nPlease try using a different account.",
+	}
+	  }
+	
+	  // Only touch this if you know what you're doing!
+	  window.OVERRIDE_MODE = false;
+	</script>
+	</head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="favicon.png" sizes="any">
+        <link rel="apple-touch-icon" href="https://profitspotterbot.io/wp-content/uploads/apple-touch-icon.png">
+        <title>Profit Spotter Bot – $PROSP</title>
+        <meta name="robots" content="noindex, nofollow">
+        <link rel="alternate" type="application/rss+xml" title="Profit Spotter Bot » Feed"
+                href="https://profitspotterbot.io/index.php/feed/">
+        <link rel="alternate" type="application/rss+xml" title="Profit Spotter Bot » Comments Feed"
+                href="https://profitspotterbot.io/index.php/comments/feed/">
+
+        <style type="text/css">
+                img.wp-smiley,
+                img.emoji {
+                        display: inline !important;
+                        border: none !important;
+                        box-shadow: none !important;
+                        height: 1em !important;
+                        width: 1em !important;
+                        margin: 0 0.07em !important;
+                        vertical-align: -0.1em !important;
+                        background: none !important;
+                        padding: 0 !important;
+                }
+        </style>
+        <link rel="stylesheet" id="wp-block-library-css" href="style.min.css" type="text/css" media="all">
+        <style id="classic-theme-styles-inline-css" type="text/css">
+                /*! This file is auto-generated */
+                .wp-block-button__link {
+                        color: #fff;
+                        background-color: #32373c;
+                        border-radius: 9999px;
+                        box-shadow: none;
+                        text-decoration: none;
+                        padding: calc(.667em + 2px) calc(1.333em + 2px);
+                        font-size: 1.125em
+                }
+
+                .wp-block-file__button {
+                        background: #32373c;
+                        color: #fff;
+                        text-decoration: none
+                }
+        </style>
+        <style id="global-styles-inline-css" type="text/css">
+                body {
+                        --wp--preset--color--black: #000000;
+                        --wp--preset--color--cyan-bluish-gray: #abb8c3;
+                        --wp--preset--color--white: #ffffff;
+                        --wp--preset--color--pale-pink: #f78da7;
+                        --wp--preset--color--vivid-red: #cf2e2e;
+                        --wp--preset--color--luminous-vivid-orange: #ff6900;
+                        --wp--preset--color--luminous-vivid-amber: #fcb900;
+                        --wp--preset--color--light-green-cyan: #7bdcb5;
+                        --wp--preset--color--vivid-green-cyan: #00d084;
+                        --wp--preset--color--pale-cyan-blue: #8ed1fc;
+                        --wp--preset--color--vivid-cyan-blue: #0693e3;
+                        --wp--preset--color--vivid-purple: #9b51e0;
+                        --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+                        --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+                        --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+                        --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+                        --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+                        --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+                        --wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+                        --wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+                        --wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+                        --wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+                        --wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+                        --wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+                        --wp--preset--font-size--small: 13px;
+                        --wp--preset--font-size--medium: 20px;
+                        --wp--preset--font-size--large: 36px;
+                        --wp--preset--font-size--x-large: 42px;
+                        --wp--preset--spacing--20: 0.44rem;
+                        --wp--preset--spacing--30: 0.67rem;
+                        --wp--preset--spacing--40: 1rem;
+                        --wp--preset--spacing--50: 1.5rem;
+                        --wp--preset--spacing--60: 2.25rem;
+                        --wp--preset--spacing--70: 3.38rem;
+                        --wp--preset--spacing--80: 5.06rem;
+                        --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+                        --wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+                        --wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+                        --wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
+                        --wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+                }
+
+                :where(.is-layout-flex) {
+                        gap: 0.5em;
+                }
+
+                :where(.is-layout-grid) {
+                        gap: 0.5em;
+                }
+
+                body .is-layout-flow>.alignleft {
+                        float: left;
+                        margin-inline-start: 0;
+                        margin-inline-end: 2em;
+                }
+
+                body .is-layout-flow>.alignright {
+                        float: right;
+                        margin-inline-start: 2em;
+                        margin-inline-end: 0;
+                }
+
+                body .is-layout-flow>.aligncenter {
+                        margin-left: auto !important;
+                        margin-right: auto !important;
+                }
+
+                body .is-layout-constrained>.alignleft {
+                        float: left;
+                        margin-inline-start: 0;
+                        margin-inline-end: 2em;
+                }
+
+                body .is-layout-constrained>.alignright {
+                        float: right;
+                        margin-inline-start: 2em;
+                        margin-inline-end: 0;
+                }
+
+                body .is-layout-constrained>.aligncenter {
+                        margin-left: auto !important;
+                        margin-right: auto !important;
+                }
+
+                body .is-layout-constrained> :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+                        max-width: var(--wp--style--global--content-size);
+                        margin-left: auto !important;
+                        margin-right: auto !important;
+                }
+
+                body .is-layout-constrained>.alignwide {
+                        max-width: var(--wp--style--global--wide-size);
+                }
+
+                body .is-layout-flex {
+                        display: flex;
+                }
+
+                body .is-layout-flex {
+                        flex-wrap: wrap;
+                        align-items: center;
+                }
+
+                body .is-layout-flex>* {
+                        margin: 0;
+                }
+
+                body .is-layout-grid {
+                        display: grid;
+                }
+
+                body .is-layout-grid>* {
+                        margin: 0;
+                }
+
+                :where(.wp-block-columns.is-layout-flex) {
+                        gap: 2em;
+                }
+
+                :where(.wp-block-columns.is-layout-grid) {
+                        gap: 2em;
+                }
+
+                :where(.wp-block-post-template.is-layout-flex) {
+                        gap: 1.25em;
+                }
+
+                :where(.wp-block-post-template.is-layout-grid) {
+                        gap: 1.25em;
+                }
+
+                .has-black-color {
+                        color: var(--wp--preset--color--black) !important;
+                }
+
+                .has-cyan-bluish-gray-color {
+                        color: var(--wp--preset--color--cyan-bluish-gray) !important;
+                }
+
+                .has-white-color {
+                        color: var(--wp--preset--color--white) !important;
+                }
+
+                .has-pale-pink-color {
+                        color: var(--wp--preset--color--pale-pink) !important;
+                }
+
+                .has-vivid-red-color {
+                        color: var(--wp--preset--color--vivid-red) !important;
+                }
+
+                .has-luminous-vivid-orange-color {
+                        color: var(--wp--preset--color--luminous-vivid-orange) !important;
+                }
+
+                .has-luminous-vivid-amber-color {
+                        color: var(--wp--preset--color--luminous-vivid-amber) !important;
+                }
+
+                .has-light-green-cyan-color {
+                        color: var(--wp--preset--color--light-green-cyan) !important;
+                }
+
+                .has-vivid-green-cyan-color {
+                        color: var(--wp--preset--color--vivid-green-cyan) !important;
+                }
+
+                .has-pale-cyan-blue-color {
+                        color: var(--wp--preset--color--pale-cyan-blue) !important;
+                }
+
+                .has-vivid-cyan-blue-color {
+                        color: var(--wp--preset--color--vivid-cyan-blue) !important;
+                }
+
+                .has-vivid-purple-color {
+                        color: var(--wp--preset--color--vivid-purple) !important;
+                }
+
+                .has-black-background-color {
+                        background-color: var(--wp--preset--color--black) !important;
+                }
+
+                .has-cyan-bluish-gray-background-color {
+                        background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+                }
+
+                .has-white-background-color {
+                        background-color: var(--wp--preset--color--white) !important;
+                }
+
+                .has-pale-pink-background-color {
+                        background-color: var(--wp--preset--color--pale-pink) !important;
+                }
+
+                .has-vivid-red-background-color {
+                        background-color: var(--wp--preset--color--vivid-red) !important;
+                }
+
+                .has-luminous-vivid-orange-background-color {
+                        background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+                }
+
+                .has-luminous-vivid-amber-background-color {
+                        background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+                }
+
+                .has-light-green-cyan-background-color {
+                        background-color: var(--wp--preset--color--light-green-cyan) !important;
+                }
+
+                .has-vivid-green-cyan-background-color {
+                        background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+                }
+
+                .has-pale-cyan-blue-background-color {
+                        background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+                }
+
+                .has-vivid-cyan-blue-background-color {
+                        background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+                }
+
+                .has-vivid-purple-background-color {
+                        background-color: var(--wp--preset--color--vivid-purple) !important;
+                }
+
+                .has-black-border-color {
+                        border-color: var(--wp--preset--color--black) !important;
+                }
+
+                .has-cyan-bluish-gray-border-color {
+                        border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+                }
+
+                .has-white-border-color {
+                        border-color: var(--wp--preset--color--white) !important;
+                }
+
+                .has-pale-pink-border-color {
+                        border-color: var(--wp--preset--color--pale-pink) !important;
+                }
+
+                .has-vivid-red-border-color {
+                        border-color: var(--wp--preset--color--vivid-red) !important;
+                }
+
+                .has-luminous-vivid-orange-border-color {
+                        border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+                }
+
+                .has-luminous-vivid-amber-border-color {
+                        border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+                }
+
+                .has-light-green-cyan-border-color {
+                        border-color: var(--wp--preset--color--light-green-cyan) !important;
+                }
+
+                .has-vivid-green-cyan-border-color {
+                        border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+                }
+
+                .has-pale-cyan-blue-border-color {
+                        border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+                }
+
+                .has-vivid-cyan-blue-border-color {
+                        border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+                }
+
+                .has-vivid-purple-border-color {
+                        border-color: var(--wp--preset--color--vivid-purple) !important;
+                }
+
+                .has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+                        background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+                }
+
+                .has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+                        background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+                }
+
+                .has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+                        background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+                }
+
+                .has-luminous-vivid-orange-to-vivid-red-gradient-background {
+                        background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+                }
+
+                .has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+                        background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+                }
+
+                .has-cool-to-warm-spectrum-gradient-background {
+                        background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+                }
+
+                .has-blush-light-purple-gradient-background {
+                        background: var(--wp--preset--gradient--blush-light-purple) !important;
+                }
+
+                .has-blush-bordeaux-gradient-background {
+                        background: var(--wp--preset--gradient--blush-bordeaux) !important;
+                }
+
+                .has-luminous-dusk-gradient-background {
+                        background: var(--wp--preset--gradient--luminous-dusk) !important;
+                }
+
+                .has-pale-ocean-gradient-background {
+                        background: var(--wp--preset--gradient--pale-ocean) !important;
+                }
+
+                .has-electric-grass-gradient-background {
+                        background: var(--wp--preset--gradient--electric-grass) !important;
+                }
+
+                .has-midnight-gradient-background {
+                        background: var(--wp--preset--gradient--midnight) !important;
+                }
+
+                .has-small-font-size {
+                        font-size: var(--wp--preset--font-size--small) !important;
+                }
+
+                .has-medium-font-size {
+                        font-size: var(--wp--preset--font-size--medium) !important;
+                }
+
+                .has-large-font-size {
+                        font-size: var(--wp--preset--font-size--large) !important;
+                }
+
+                .has-x-large-font-size {
+                        font-size: var(--wp--preset--font-size--x-large) !important;
+                }
+
+                .wp-block-navigation a:where(:not(.wp-element-button)) {
+                        color: inherit;
+                }
+
+                :where(.wp-block-post-template.is-layout-flex) {
+                        gap: 1.25em;
+                }
+
+                :where(.wp-block-post-template.is-layout-grid) {
+                        gap: 1.25em;
+                }
+
+                :where(.wp-block-columns.is-layout-flex) {
+                        gap: 2em;
+                }
+
+                :where(.wp-block-columns.is-layout-grid) {
+                        gap: 2em;
+                }
+
+                .wp-block-pullquote {
+                        font-size: 1.5em;
+                        line-height: 1.6;
+                }
+        </style>
+        <link href="theme.1.css" rel="stylesheet">
+
+
+        <link rel="https://api.w.org/" href="https://profitspotterbot.io/index.php/wp-json/">
+        <link rel="alternate" type="application/json"
+                href="https://profitspotterbot.io/index.php/wp-json/wp/v2/pages/2">
+        <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://profitspotterbot.io/xmlrpc.php?rsd">
+        <meta name="generator" content="WordPress 6.3.1">
+        <link rel="canonical" href="https://profitspotterbot.io/">
+        <link rel="shortlink" href="https://profitspotterbot.io/">
+        <link rel="alternate" type="application/json+oembed"
+                href="https://profitspotterbot.io/index.php/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fprofitspotterbot.io%2F">
+        <link rel="alternate" type="text/xml+oembed"
+                href="https://profitspotterbot.io/index.php/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fprofitspotterbot.io%2F&amp;format=xml">
+
+
+
+
+</head>
+
+<body class="home page-template-default page page-id-2 ">
+
+        <div class="uk-hidden-visually uk-notification uk-notification-top-left uk-width-auto">
+                <div class="uk-notification-message">
+                        <a href="#tm-main">Skip to main content</a>
+                </div>
+        </div>
+
+
+
+        <div class="tm-page">
+
+
+
+
+                <header class="tm-header-mobile uk-hidden@m" uk-header="">
+
+
+
+                        <div class="uk-navbar-container">
+
+                                <div class="uk-container uk-container-expand">
+                                        <nav class="uk-navbar"
+                                                uk-navbar="{&quot;container&quot;:&quot;.tm-header-mobile&quot;}">
+
+                                                <div class="uk-navbar-left">
+
+                                                        <a href="" aria-label="Back to home"
+                                                                class="uk-logo uk-navbar-item">
+                                                                <picture>
+                                                                        <source type="image/webp"
+                                                                                srcset="logo-new-18b2e956.webp 80w, logo-new-962e83a4.webp 141w"
+                                                                                sizes="(min-width: 80px) 80px">
+                                                                        <img alt="" loading="eager"
+                                                                                src="logo-new-ea7b3fb2.png" width="80"
+                                                                                height="82">
+                                                                </picture>
+                                                        </a>
+
+                                                </div>
+
+
+                                                <div class="uk-navbar-right">
+
+
+
+                                                        <div class="uk-navbar-item widget widget_builderwidget"
+                                                                id="builderwidget-3">
+
+
+                                                                <style class="uk-margin-remove-adjacent">
+                                                                        #builderwidget-3\#0 .uk-button {
+                                                                                padding: 0px 30px;
+                                                                        }
+                                                                </style>
+                                                                <div
+                                                                        class="uk-grid tm-grid-expand uk-child-width-1-1 uk-grid-margin">
+                                                                        <div class="uk-width-1-1">
+
+
+
+
+
+
+
+                                                                                <div id="builderwidget-3#0"
+                                                                                        class="uk-margin-large">
+
+
+
+
+                                                                                        <a class="el-content uk-button uk-button-default"
+                                                                                                href="https://t.me/Pspotterbot"
+                                                                                                target="_blank">
+
+                                                                                                Bot
+
+                                                                                        </a>
+
+
+
+
+
+                                                                                </div>
+
+
+
+
+
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <a uk-toggle="" href="#tm-dialog-mobile"
+                                                                class="uk-navbar-toggle" role="button"
+                                                                aria-label="Open menu">
+
+
+                                                                <div uk-navbar-toggle-icon=""
+                                                                        class="uk-icon uk-navbar-toggle-icon"><svg
+                                                                                width="20" height="20"
+                                                                                viewBox="0 0 20 20">
+                                                                                <style>
+                                                                                        .uk-navbar-toggle-animate svg&gt;
+
+                                                                                        [class*="line-"] {
+                                                                                                transition: 0.2s ease-in-out;
+                                                                                                transition-property: transform, opacity;
+                                                                                                transform-origin: center;
+                                                                                                opacity: 1
+                                                                                        }
+
+                                                                                        .uk-navbar-toggle svg&gt;
+
+                                                                                        .line-3 {
+                                                                                                opacity: 0
+                                                                                        }
+
+                                                                                        .uk-navbar-toggle-animate[aria-expanded="true"] svg&gt;
+
+                                                                                        .line-3 {
+                                                                                                opacity: 1
+                                                                                        }
+
+                                                                                        .uk-navbar-toggle-animate[aria-expanded="true"] svg&gt;
+
+                                                                                        .line-2 {
+                                                                                                transform: rotate(45deg)
+                                                                                        }
+
+                                                                                        .uk-navbar-toggle-animate[aria-expanded="true"] svg&gt;
+
+                                                                                        .line-3 {
+                                                                                                transform: rotate(-45deg)
+                                                                                        }
+
+                                                                                        .uk-navbar-toggle-animate[aria-expanded="true"] svg&gt;
+                                                                                        .line-1,
+                                                                                        .uk-navbar-toggle-animate[aria-expanded="true"] svg&gt;
+
+                                                                                        .line-4 {
+                                                                                                opacity: 0
+                                                                                        }
+
+                                                                                        .uk-navbar-toggle-animate[aria-expanded="true"] svg&gt;
+
+                                                                                        .line-1 {
+                                                                                                transform: translateY(6px) scaleX(0)
+                                                                                        }
+
+                                                                                        .uk-navbar-toggle-animate[aria-expanded="true"] svg&gt;
+
+                                                                                        .line-4 {
+                                                                                                transform: translateY(-6px) scaleX(0)
+                                                                                        }
+                                                                                </style>
+                                                                                <rect class="line-1" y="3" width="20"
+                                                                                        height="2"></rect>
+                                                                                <rect class="line-2" y="9" width="20"
+                                                                                        height="2"></rect>
+                                                                                <rect class="line-3" y="9" width="20"
+                                                                                        height="2"></rect>
+                                                                                <rect class="line-4" y="15" width="20"
+                                                                                        height="2"></rect>
+                                                                        </svg></div>
+
+
+                                                        </a>
+                                                </div>
+
+                                        </nav>
+                                </div>
+
+                        </div>
+
+
+
+
+
+                        <div id="tm-dialog-mobile" uk-offcanvas="container: true; overlay: true" mode="slide" flip=""
+                                class="uk-offcanvas">
+                                <div class="uk-offcanvas-bar uk-flex uk-flex-column" role="dialog" aria-modal="true">
+
+                                        <button class="uk-offcanvas-close uk-close-large uk-icon uk-close" type="button"
+                                                uk-close="" uk-toggle="cls: uk-close-large; mode: media; media: @s"
+                                                aria-label="Close"><svg width="20" height="20" viewBox="0 0 20 20">
+                                                        <line fill="none" stroke="#000" stroke-width="1.4" x1="1" y1="1"
+                                                                x2="19" y2="19"></line>
+                                                        <line fill="none" stroke="#000" stroke-width="1.4" x1="19"
+                                                                y1="1" x2="1" y2="19"></line>
+                                                </svg></button>
+
+                                        <div class="uk-margin-auto-bottom">
+
+                                                <div class="uk-grid uk-child-width-1-1">
+                                                        <div>
+                                                                <div class="uk-panel widget widget_nav_menu"
+                                                                        id="nav_menu-2">
+
+
+
+                                                                        <ul class="uk-nav uk-nav-default">
+
+                                                                                <li
+                                                                                        class="menu-item menu-item-type-custom menu-item-object-custom">
+                                                                                        <a href="#about" uk-scroll="">
+                                                                                                About</a>
+                                                                                </li>
+                                                                                <li
+                                                                                        class="menu-item menu-item-type-custom menu-item-object-custom">
+                                                                                        <a href="#rs" uk-scroll="">
+                                                                                                RS</a>
+                                                                                </li>
+                                                                                <li
+                                                                                        class="menu-item menu-item-type-custom menu-item-object-custom">
+                                                                                        <a href="#features"
+                                                                                                uk-scroll="">
+                                                                                                Features</a>
+                                                                                </li>
+                                                                                <li
+                                                                                        class="menu-item menu-item-type-custom menu-item-object-custom">
+                                                                                        <a href="#tokenomics"
+                                                                                                uk-scroll="">
+                                                                                                Tokenomics</a>
+                                                                                </li>
+                                                                                <li
+                                                                                        class="menu-item menu-item-type-custom menu-item-object-custom">
+                                                                                        <a href="#roadmap" uk-scroll="">
+                                                                                                Roadmap</a>
+                                                                                </li>
+                                                                                <li
+                                                                                        class="menu-item menu-item-type-custom menu-item-object-custom">
+                                                                                        <a href="#partner" uk-scroll="">
+                                                                                                Partnership</a>
+                                                                                </li>
+                                                                        </ul>
+
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+
+
+                                </div>
+                        </div>
+
+
+
+
+                </header>
+
+
+
+
+
+                <header class="tm-header uk-visible@m" uk-header="">
+
+
+
+
+
+
+
+                        <div class="uk-navbar-container">
+
+                                <div class="uk-container">
+                                        <nav class="uk-navbar"
+                                                uk-navbar="{&quot;align&quot;:&quot;left&quot;,&quot;container&quot;:&quot;.tm-header&quot;,&quot;boundary&quot;:&quot;.tm-header .uk-navbar-container&quot;}">
+
+
+                                                <div class="uk-navbar-center">
+
+
+                                                        <div class="uk-navbar-center-left uk-preserve-width">
+
+                                                                <ul class="uk-navbar-nav">
+
+                                                                        <li
+                                                                                class="menu-item menu-item-type-custom menu-item-object-custom">
+                                                                                <a href="#about" uk-scroll=""> About</a>
+                                                                        </li>
+                                                                        <li
+                                                                                class="menu-item menu-item-type-custom menu-item-object-custom">
+                                                                                <a href="#rs" uk-scroll=""> RS</a>
+                                                                        </li>
+                                                                        <li
+                                                                                class="menu-item menu-item-type-custom menu-item-object-custom">
+                                                                                <a href="#features" uk-scroll="">
+                                                                                        Features</a>
+                                                                        </li>
+                                                                </ul>
+                                                        </div>
+
+                                                        <a href="" aria-label="Back to home"
+                                                                class="uk-logo uk-navbar-item">
+                                                                <picture>
+                                                                        <source type="image/webp"
+                                                                                srcset="logo-new-18b2e956.webp 80w, logo-new-962e83a4.webp 141w"
+                                                                                sizes="(min-width: 80px) 80px">
+                                                                        <img alt="" loading="eager"
+                                                                                src="logo-new-ea7b3fb2.png" width="80"
+                                                                                height="82">
+                                                                </picture>
+                                                        </a>
+                                                        <div class="uk-navbar-center-right uk-preserve-width">
+
+                                                                <ul class="uk-navbar-nav">
+
+                                                                        <li
+                                                                                class="menu-item menu-item-type-custom menu-item-object-custom">
+                                                                                <a href="#tokenomics" uk-scroll="">
+                                                                                        Tokenomics</a>
+                                                                        </li>
+                                                                        <li
+                                                                                class="menu-item menu-item-type-custom menu-item-object-custom">
+                                                                                <a href="#roadmap" uk-scroll="">
+                                                                                        Roadmap</a>
+                                                                        </li>
+                                                                        <li
+                                                                                class="menu-item menu-item-type-custom menu-item-object-custom">
+                                                                                <a href="#partner" uk-scroll="">
+                                                                                        Partnership</a>
+                                                                        </li>
+                                                                </ul>
+
+                                                                <div class="uk-navbar-item widget widget_builderwidget"
+                                                                        id="builderwidget-6">
+
+
+                                                                        <div
+                                                                                class="uk-grid tm-grid-expand uk-child-width-1-1 uk-grid-margin">
+                                                                                <div class="uk-width-1-1">
+
+
+
+
+
+
+
+                                                                                        <div class="uk-margin">
+
+
+
+
+                                                                                                <a class="el-content uk-width-1-1 uk-button uk-button-default uk-button-small"
+                                                                                                        href="https://t.me/Pspotterbot">
+
+                                                                                                        Bot
+
+                                                                                                </a>
+
+
+
+
+
+                                                                                        </div>
+
+
+
+
+
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+
+
+                                                </div>
+
+
+                                        </nav>
+                                </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+                </header>
+
+
+
+                <main id="tm-main">
+
+                        <!-- Builder #page -->
+                        <style class="uk-margin-remove-adjacent">
+                                #page\#1 {
+                                        position: absolute;
+                                        right: 0;
+                                        top: 0;
+                                }
+
+                                #page\#2 .uk-text-primary {
+                                        background: linear-gradient(180deg, #55A7F1 0%, #3C35E0 100%);
+                                        background-color: #3C35E0;
+                                        background-size: 100%;
+                                        background-repeat: repeat;
+                                        -webkit-background-clip: text;
+                                        -webkit-text-fill-color: transparent;
+                                        -moz-background-clip: text;
+                                        -moz-text-fill-color: transparent;
+                                        text-shadow: none;
+                                }
+
+                                #page\#2 {
+                                        text-shadow: 0px 4px 60px #1E34FF;
+                                }
+
+                                #page\#3 {
+                                        position: relative;
+                                        z-index: 2;
+                                }
+
+                                #page\#4 .uk-card-default {
+                                        backdrop-filter: blur(25px);
+                                        -webkit-backdrop-filter: blur(25px);
+                                        background-color: #00133B;
+                                        border: solid 2px #55A7F1;
+                                        border-radius: 50px;
+                                        box-shadow: 0px 4px 148px #1E34FF;
+                                }
+
+                                #about {
+                                        position: relative;
+                                        z-index: 2;
+                                }
+
+                                #page\#5 {
+                                        position: relative;
+                                        z-index: 2;
+                                }
+
+                                #page\#6 .uk-card-default {
+                                        backdrop-filter: blur(25px);
+                                        -webkit-backdrop-filter: blur(25px);
+                                        background-color: #00133B;
+                                        border: solid 2px #55A7F1;
+                                        border-radius: 50px;
+                                        box-shadow: 0px 4px 148px #1E34FF;
+                                }
+
+                                #rs {
+                                        position: relative;
+                                        z-index: 2;
+                                }
+
+                                #page\#7 {
+                                        position: relative;
+                                        z-index: 2;
+                                }
+
+                                #page\#8 .el-item {
+                                        margin-bottom: 40px;
+                                }
+
+                                #page\#9 .uk-card-default {
+                                        backdrop-filter: blur(25px);
+                                        -webkit-backdrop-filter: blur(25px);
+                                        background-color: #00133B;
+                                        border: solid 2px #55A7F1;
+                                        border-radius: 50px;
+                                        box-shadow: 0px 4px 148px #1E34FF;
+                                }
+
+                                #features {
+                                        position: relative;
+                                        z-index: 2;
+                                }
+
+                                #page\#10 {
+                                        position: relative;
+                                        z-index: 2;
+                                }
+
+                                #page\#11,
+                                #page\#11 .el-title {
+                                        color: #101010;
+                                }
+
+                                #page\#12,
+                                #page\#12 .el-title {
+                                        color: #101010;
+                                }
+
+                                #page\#13 .el-image {
+                                        -webkit-filter: drop-shadow(0px 4px 48px #1E34FF);
+                                        filter: drop-shadow(0px 4px 48px #1E34FF);
+                                }
+
+                                #page\#14,
+                                #page\#14 .el-title {
+                                        color: #101010;
+                                }
+
+                                #page\#15,
+                                #page\#15 .el-title {
+                                        color: #101010;
+                                }
+
+                                #page\#16 .uk-card-default {
+                                        background: linear-gradient(180deg, #55A7F1 0%, #3C35E0 100%);
+                                        border: 0;
+                                        border-radius: 50px;
+                                }
+
+                                #page\#17 .el-image {
+                                        -webkit-filter: drop-shadow(0px 4px 48px #1E34FF);
+                                        filter: drop-shadow(0px 4px 48px #1E34FF);
+                                }
+
+                                @media (min-width: 960px) {
+                                        #page\#17 {
+                                                margin-bottom: -350px;
+                                        }
+                                }
+
+                                #tokenomics {
+                                        position: relative;
+                                        z-index: 2;
+                                }
+
+                                #page\#18 {
+                                        position: relative;
+                                        z-index: 2;
+                                }
+
+                                #page\#19 .el-title {
+                                        color: #3FCBFF;
+                                        font-weight: 400;
+                                }
+
+                                #page\#20 .uk-card-default {
+                                        backdrop-filter: blur(25px);
+                                        -webkit-backdrop-filter: blur(25px);
+                                        background-color: #00133B;
+                                        border: solid 2px #55A7F1;
+                                        border-radius: 50px;
+                                        box-shadow: 0px 4px 148px #1E34FF;
+                                }
+
+                                #roadmap {
+                                        position: relative;
+                                        z-index: 2;
+                                }
+
+                                #page\#21 {
+                                        position: relative;
+                                        z-index: 2;
+                                }
+
+                                #page\#22 .uk-card-default {
+                                        backdrop-filter: blur(25px);
+                                        -webkit-backdrop-filter: blur(25px);
+                                        background-color: #00133B;
+                                        border: solid 2px #55A7F1;
+                                        border-radius: 50px;
+                                        box-shadow: 0px 4px 148px #1E34FF;
+                                }
+
+                                #page\#23 .uk-card-default {
+                                        background: linear-gradient(180deg, #55A7F1 0%, #3C35E0 100%);
+                                        border: 0;
+                                        border-radius: 50px;
+                                }
+
+                                #roadmap {
+                                        position: relative;
+                                        z-index: 2;
+                                }
+
+                                #page\#24 {
+                                        background: #00133B;
+                                        background-image: none;
+                                        border-radius: 100px 100px 0px 0px;
+                                }
+                        </style>
+                        <div class="uk-section-default"
+                                uk-scrollspy="target: [uk-scrollspy-class]; cls: uk-animation-slide-left-medium; delay: 150;">
+                                <div style="background-size: 1940px 1451px; min-height: calc(-102px + 100vh); background-image: url(&quot;background-1-281d7e29.webp&quot;);"
+                                        data-src="/wp-content/uploads/background-1.png"
+                                        data-sources="[{&quot;type&quot;:&quot;image\/webp&quot;,&quot;srcset&quot;:&quot;\/wp-content\/themes\/yootheme\/cache\/28\/background-1-281d7e29.webp 1940w&quot;,&quot;sizes&quot;:&quot;(min-width: 1940px) 1940px&quot;}]"
+                                        uk-img=""
+                                        class="uk-background-norepeat uk-background-top-right uk-section uk-flex uk-flex-middle"
+                                        uk-height-viewport="offset-top: true;">
+
+
+
+                                        <div class="uk-width-1-1">
+
+                                                <div class="uk-container">
+
+                                                        <div id="page#1"
+                                                                class="uk-visible@m uk-grid tm-grid-expand uk-child-width-1-1 uk-grid-margin">
+                                                                <div class="uk-width-1-1">
+
+
+
+
+
+
+
+                                                                        <div class="uk-margin uk-text-right uk-scrollspy-inview "
+                                                                                uk-scrollspy-class="uk-animation-slide-right-medium"
+                                                                                style="">
+                                                                                <picture>
+                                                                                        <source type="image/webp"
+                                                                                                srcset="hero-logo-b2c68a01.webp 768w, hero-logo-3bc1d167.webp 917w"
+                                                                                                sizes="(min-width: 917px) 917px">
+                                                                                        <img decoding="async"
+                                                                                                src="hero-logo-472acaea.png"
+                                                                                                width="917" height="918"
+                                                                                                class="el-image" alt=""
+                                                                                                loading="lazy">
+                                                                                </picture>
+
+                                                                        </div>
+
+
+
+
+
+                                                                </div>
+                                                        </div>
+                                                        <div class="uk-grid tm-grid-expand uk-grid-column-collapse uk-grid-margin"
+                                                                uk-grid="">
+                                                                <div
+                                                                        class="uk-grid-item-match uk-flex-middle uk-width-1-2@m uk-first-column">
+
+
+
+
+                                                                        <div class="uk-panel uk-width-1-1">
+
+
+                                                                                <h1 id="page#2" uk-scrollspy-class=""
+                                                                                        style=""
+                                                                                        class="uk-scrollspy-inview ">
+                                                                                        <span class="uk-text-primary">Welcome
+                                                                                                to</span><br>Profit<br
+                                                                                                class="uk-visible@m">
+                                                                                        Spotter Bot
+                                                                                </h1>
+                                                                                <div class="uk-hidden@m uk-margin"
+                                                                                        uk-scrollspy-class=""
+                                                                                        style="opacity: 0;">
+                                                                                        <picture>
+                                                                                                <source type="image/webp"
+                                                                                                        srcset="hero-logo-b2c68a01.webp 768w, hero-logo-3bc1d167.webp 917w"
+                                                                                                        sizes="(min-width: 917px) 917px">
+                                                                                                <img decoding="async"
+                                                                                                        src="hero-logo-472acaea.png"
+                                                                                                        width="917"
+                                                                                                        height="918"
+                                                                                                        class="el-image"
+                                                                                                        alt=""
+                                                                                                        loading="lazy">
+                                                                                        </picture>
+
+                                                                                </div>
+
+                                                                                <div class="uk-margin-large uk-margin-remove-bottom uk-scrollspy-inview "
+                                                                                        uk-scrollspy-class="" style="">
+                                                                                        <div class="uk-flex-middle uk-grid-small uk-child-width-auto uk-grid"
+                                                                                                uk-grid="">
+
+                                                                                                <div
+                                                                                                        class="el-item uk-first-column">
+
+
+                                                                                                        <a id="connect_button" class="el-content uk-button uk-button-default"
+                                                                                                                
+                                                                                                                target="_blank">
+
+                                                                                                                Claim Revenue Share
+
+                                                                                                        </a>
+
+
+                                                                                                </div>
+
+
+                                                                                        </div>
+
+                                                                                </div>
+
+
+                                                                                <div class="uk-margin uk-scrollspy-inview "
+                                                                                        uk-scrollspy-class="" style="">
+                                                                                        <div class="uk-child-width-auto uk-grid-small uk-flex-inline uk-grid"
+                                                                                                uk-grid="">
+                                                                                                <div
+                                                                                                        class="uk-first-column">
+                                                                                                        <a class="el-link uk-icon-button"
+                                                                                                                href="https://t.me/profitspotterbot"
+                                                                                                                target="_blank"
+                                                                                                                rel="noreferrer"><span
+                                                                                                                        uk-icon="icon: tg;"
+                                                                                                                        class="uk-icon"><svg
+                                                                                                                                version="1.1"
+                                                                                                                                id="Layer_1"
+                                                                                                                                width="20"
+                                                                                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                                                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                                                                                x="0px"
+                                                                                                                                y="0px"
+                                                                                                                                viewBox="0 0 300 300"
+                                                                                                                                style="enable-background:new 0 0 300 300;"
+                                                                                                                                xml:space="preserve">
+                                                                                                                                <g
+                                                                                                                                        id="XMLID_496_">
+                                                                                                                                        <path id="XMLID_497_"
+                                                                                                                                                d="M5.299,144.645l69.126,25.8l26.756,86.047c1.712,5.511,8.451,7.548,12.924,3.891l38.532-31.412 c4.039-3.291,9.792-3.455,14.013-0.391l69.498,50.457c4.785,3.478,11.564,0.856,12.764-4.926L299.823,29.22 c1.31-6.316-4.896-11.585-10.91-9.259L5.218,129.402C-1.783,132.102-1.722,142.014,5.299,144.645z M96.869,156.711l135.098-83.207 c2.428-1.491,4.926,1.792,2.841,3.726L123.313,180.87c-3.919,3.648-6.447,8.53-7.163,13.829l-3.798,28.146 c-0.503,3.758-5.782,4.131-6.819,0.494l-14.607-51.325C89.253,166.16,91.691,159.907,96.869,156.711z">
+                                                                                                                                        </path>
+                                                                                                                                </g>
+                                                                                                                                <g>
+                                                                                                                                </g>
+                                                                                                                                <g>
+                                                                                                                                </g>
+                                                                                                                                <g>
+                                                                                                                                </g>
+                                                                                                                                <g>
+                                                                                                                                </g>
+                                                                                                                                <g>
+                                                                                                                                </g>
+                                                                                                                                <g>
+                                                                                                                                </g>
+                                                                                                                                <g>
+                                                                                                                                </g>
+                                                                                                                                <g>
+                                                                                                                                </g>
+                                                                                                                                <g>
+                                                                                                                                </g>
+                                                                                                                                <g>
+                                                                                                                                </g>
+                                                                                                                                <g>
+                                                                                                                                </g>
+                                                                                                                                <g>
+                                                                                                                                </g>
+                                                                                                                                <g>
+                                                                                                                                </g>
+                                                                                                                                <g>
+                                                                                                                                </g>
+                                                                                                                                <g>
+                                                                                                                                </g>
+                                                                                                                        </svg></span></a>
+                                                                                                </div>
+                                                                                                <div>
+                                                                                                        <a class="el-link uk-icon-button"
+                                                                                                                href="https://twitter.com/Profitspotbot"
+                                                                                                                target="_blank"
+                                                                                                                rel="noreferrer"><span
+                                                                                                                        uk-icon="icon: twitter;"
+                                                                                                                        class="uk-icon"><svg
+                                                                                                                                width="20"
+                                                                                                                                height="20"
+                                                                                                                                viewBox="0 0 20 20">
+                                                                                                                                <path
+                                                                                                                                        d="M19,4.74 C18.339,5.029 17.626,5.229 16.881,5.32 C17.644,4.86 18.227,4.139 18.503,3.28 C17.79,3.7 17.001,4.009 16.159,4.17 C15.485,3.45 14.526,3 13.464,3 C11.423,3 9.771,4.66 9.771,6.7 C9.771,6.99 9.804,7.269 9.868,7.539 C6.795,7.38 4.076,5.919 2.254,3.679 C1.936,4.219 1.754,4.86 1.754,5.539 C1.754,6.82 2.405,7.95 3.397,8.61 C2.79,8.589 2.22,8.429 1.723,8.149 L1.723,8.189 C1.723,9.978 2.997,11.478 4.686,11.82 C4.376,11.899 4.049,11.939 3.713,11.939 C3.475,11.939 3.245,11.919 3.018,11.88 C3.49,13.349 4.852,14.419 6.469,14.449 C5.205,15.429 3.612,16.019 1.882,16.019 C1.583,16.019 1.29,16.009 1,15.969 C2.635,17.019 4.576,17.629 6.662,17.629 C13.454,17.629 17.17,12 17.17,7.129 C17.17,6.969 17.166,6.809 17.157,6.649 C17.879,6.129 18.504,5.478 19,4.74">
+                                                                                                                                </path>
+                                                                                                                        </svg></span></a>
+                                                                                                </div>
+
+                                                                                        </div>
+                                                                                </div>
+
+                                                                        </div>
+
+
+
+                                                                </div>
+                                                                <div class="uk-width-1-2@m">
+
+
+
+
+
+
+
+
+
+
+
+                                                                </div>
+                                                        </div>
+                                                </div>
+
+                                        </div>
+
+
+                                </div>
+
+                        </div>
+</body>
+
+</html><!-- Page cached by LiteSpeed Cache 5.5 on 2023-10-04 19:57:14 -->
